@@ -2,19 +2,48 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Space AI App</title>
+  <title>SpaceBot AI App</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- Orbitron font for spacey feel -->
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@600;900&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
   <canvas id="spaceBg"></canvas>
-  <div id="authArea" class="centered">
+  <!-- HOMEPAGE -->
+  <div id="homePage" class="centered">
+    <div class="homepage-box">
+      <h1 class="space-title">🚀 SpaceBot AI</h1>
+      <div class="space-desc">
+        <p>
+          <b>Welcome to SpaceBot AI!</b>
+          <br><br>
+          <span class="space-emoji">✨🪐🌙🌠</span><br>
+          Explore a unique AI chat experience with:<br>
+          <ul>
+            <li><b>Space-Themed Animated Background:</b> Enjoy planets, comets and twinkling stars!</li>
+            <li><b>AI Chatbot:</b> Ask anything about the universe, astronomy, or science and get fun, conversational replies.</li>
+            <li><b>Text-to-Speech:</b> SpaceBot will <b>speak</b> its answers aloud.</li>
+            <li><b>Sign In/Register:</b> Your chat is saved between visits.</li>
+            <li><b>Modern UI:</b> Designed for all devices with a cosmic look and feel.</li>
+          </ul>
+        </p>
+        <button class="big-btn" onclick="goToLogin()">Sign In / Register</button>
+      </div>
+      <div class="home-footer">
+        <span>Made by Gwaple | Powered by JavaScript | 2025</span>
+      </div>
+    </div>
+  </div>
+  <!-- AUTH AREA -->
+  <div id="authArea" class="centered" style="display:none;">
     <div id="loginBox" class="box glow">
       <h2>Sign In</h2>
       <input id="loginUser" placeholder="Username"><br>
       <input id="loginPass" type="password" placeholder="Password"><br>
       <button onclick="login()">Sign In</button>
       <button onclick="showRegister()">Register</button>
+      <button class="home-link" onclick="goHome()">Home</button>
       <div id="loginMsg"></div>
     </div>
     <div id="registerBox" class="box" style="display:none;">
@@ -23,13 +52,18 @@
       <input id="regPass" type="password" placeholder="Password"><br>
       <button onclick="register()">Register</button>
       <button onclick="showLogin()">Back to Sign In</button>
+      <button class="home-link" onclick="goHome()">Home</button>
       <div id="registerMsg"></div>
     </div>
   </div>
+  <!-- AI APP -->
   <div id="aiApp" style="display:none;">
     <div class="topbar">
       <span id="welcome"></span>
-      <button onclick="logout()" class="logout-btn">Logout</button>
+      <div>
+        <button onclick="goHome()" class="home-link">Home</button>
+        <button onclick="logout()" class="logout-btn">Logout</button>
+      </div>
     </div>
     <div class="aichat-box">
       <div class="ai-title">🪐 SpaceBot</div>
