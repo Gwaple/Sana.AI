@@ -1,5 +1,5 @@
 body {
-  font-family: 'Segoe UI', Arial, sans-serif;
+  font-family: 'Orbitron', 'Segoe UI', Arial, sans-serif;
   margin: 0;
   min-height: 100vh;
   background: #0c0c22;
@@ -20,6 +20,77 @@ body {
   pointer-events: none;
   background: transparent;
 }
+.space-title {
+  font-family: 'Orbitron', Arial, sans-serif;
+  font-size: 2.6em;
+  letter-spacing: 3.5px;
+  color: #6cbaff;
+  text-shadow: 0 3px 18px #2c5fff99;
+  margin-bottom: 6px;
+  text-align: center;
+  font-weight: 900;
+  margin-top: 0;
+}
+.homepage-box {
+  background: rgba(24,27,60,0.92);
+  border-radius: 22px;
+  box-shadow: 0 4px 38px #213579cc, 0 0 0 3px #7ed0ff22 inset;
+  padding: 36px 34px 22px 34px;
+  min-width: 320px;
+  max-width: 430px;
+  color: #d8eaff;
+  animation: popinbox 0.7s;
+}
+.space-desc {
+  margin: 16px 0 8px 0;
+  font-size: 1.14em;
+  text-align: left;
+}
+.space-emoji {
+  font-size: 1.3em;
+  letter-spacing: 0.3em;
+  margin: 0;
+  display: block;
+}
+.space-desc ul {
+  margin: 13px 0 8px 20px;
+  padding: 0;
+  font-size: 1em;
+}
+.big-btn {
+  background: linear-gradient(90deg, #2e90ff 50%, #b8f2e6 100%);
+  border: none;
+  border-radius: 14px;
+  color: #02284a;
+  font-family: 'Orbitron', Arial, sans-serif;
+  font-size: 1.17em;
+  font-weight: 700;
+  padding: 12px 36px;
+  margin: 24px 0 0 0;
+  cursor: pointer;
+  box-shadow: 0 2px 18px #3b8fff44;
+  transition: background .2s, box-shadow .2s, color .2s;
+}
+.big-btn:hover { background: #66e0ff; color:#02284a; box-shadow: 0 2px 24px #1eafff99; }
+.home-footer {
+  font-size: 0.93em;
+  color: #87b5ff;
+  text-align: center;
+  margin-top: 20px;
+}
+.home-link {
+  font-family: 'Orbitron', Arial, sans-serif;
+  background: #232449;
+  color: #8cc7ff;
+  border: none;
+  border-radius: 8px;
+  font-size: 0.97em;
+  padding: 6px 18px;
+  margin: 0 8px 0 0;
+  cursor: pointer;
+  transition: background .15s;
+}
+.home-link:hover { background: #1b3250; color:#baf1ff; }
 .box {
   background: rgba(20,24,50,0.93);
   border-radius: 16px;
@@ -33,7 +104,7 @@ body {
 }
 @keyframes popinbox { 0% { opacity:0; transform: scale(0.95);} 100% { opacity: 1; transform: scale(1);} }
 .box.glow { box-shadow: 0 0 24px 6px #3547ff88, 0 0 0 2px #4e5fff55 inset; }
-h2 { color: #aecaff; margin-top: 0; }
+h2 { color: #aecaff; margin-top: 0; font-family: 'Orbitron', Arial, sans-serif; letter-spacing: 1.2px;}
 .topbar {
   display: flex; justify-content: space-between; align-items: center;
   padding: 18px 24px 10px 24px; font-size: 1.1em;
@@ -42,6 +113,7 @@ h2 { color: #aecaff; margin-top: 0; }
   box-shadow: 0 2px 18px #1c275844;
   margin-bottom: 10px;
   color: #b6c9ff;
+  font-family: 'Orbitron', Arial, sans-serif;
 }
 .logout-btn {
   background: #291e3b;
@@ -51,6 +123,7 @@ h2 { color: #aecaff; margin-top: 0; }
   padding: 8px 18px;
   font-size: 1em;
   cursor: pointer;
+  margin-left: 8px;
 }
 .aichat-box {
   max-width: 410px;
@@ -72,6 +145,7 @@ h2 { color: #aecaff; margin-top: 0; }
   margin-bottom: 10px;
   letter-spacing: 1.7px;
   text-shadow: 0 2px 8px #0071ff66;
+  font-family: 'Orbitron', Arial, sans-serif;
 }
 .chat-window {
   height: 300px;
@@ -83,6 +157,7 @@ h2 { color: #aecaff; margin-top: 0; }
   box-shadow: 0 1px 8px #262e5055;
   font-size: 1.08em;
   color: #c0e8ff;
+  font-family: 'Segoe UI', Arial, sans-serif; /* readable for chat */
 }
 .msg {
   display: flex;
@@ -114,6 +189,7 @@ h2 { color: #aecaff; margin-top: 0; }
   border: 1.5px solid #2e3a8d;
   background: #191c33;
   color: #e3e7ff;
+  font-family: 'Segoe UI', Arial, sans-serif;
 }
 .send-btn {
   background: #2e90ff;
