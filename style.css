@@ -2,7 +2,7 @@ body {
   font-family: 'Segoe UI', Arial, sans-serif;
   margin: 0;
   min-height: 100vh;
-  background: #f6f8fc;
+  background: #0c0c22;
   overflow-x: hidden;
   transition: background 0.7s;
 }
@@ -12,38 +12,41 @@ body {
   align-items: center;
   min-height: 85vh;
 }
-#bgAnim {
+#spaceBg {
   position: fixed;
   left: 0; top: 0;
   width: 100vw; height: 100vh;
   z-index: 0;
   pointer-events: none;
+  background: transparent;
 }
 .box {
-  background: rgba(255,255,255,0.93);
+  background: rgba(20,24,50,0.93);
   border-radius: 16px;
-  box-shadow: 0 2px 24px 0 #b9e0ff88, 0 0 0 2px #d0e8ff inset;
+  box-shadow: 0 2px 24px 0 #a8b4ff55, 0 0 0 2px #4e5fff25 inset;
   padding: 28px 24px 18px 24px;
   min-width: 300px;
   max-width: 340px;
+  color: #e3e7ff;
   transition: box-shadow 0.3s;
   animation: popinbox 0.7s;
 }
 @keyframes popinbox { 0% { opacity:0; transform: scale(0.95);} 100% { opacity: 1; transform: scale(1);} }
-.box.glow { box-shadow: 0 0 24px 6px #a0bfff, 0 0 0 2px #d0e8ff inset; }
-h2 { color: #5c7cfa; margin-top: 0; }
+.box.glow { box-shadow: 0 0 24px 6px #3547ff88, 0 0 0 2px #4e5fff55 inset; }
+h2 { color: #aecaff; margin-top: 0; }
 .topbar {
   display: flex; justify-content: space-between; align-items: center;
   padding: 18px 24px 10px 24px; font-size: 1.1em;
-  background: rgba(255,255,255,0.7);
+  background: rgba(17,22,44,0.7);
   border-radius: 0 0 22px 22px;
-  box-shadow: 0 2px 18px #dbeafe44;
+  box-shadow: 0 2px 18px #1c275844;
   margin-bottom: 10px;
+  color: #b6c9ff;
 }
 .logout-btn {
-  background: #ffeaea;
-  color: #b22222;
-  border: 1px solid #fdc7c7;
+  background: #291e3b;
+  color: #b0a1e5;
+  border: 1px solid #523d7d;
   border-radius: 7px;
   padding: 8px 18px;
   font-size: 1em;
@@ -52,30 +55,34 @@ h2 { color: #5c7cfa; margin-top: 0; }
 .aichat-box {
   max-width: 410px;
   margin: 28px auto 0 auto;
-  background: rgba(255,255,255,0.93);
+  background: rgba(30,28,53,0.93);
   border-radius: 18px;
-  box-shadow: 0 2px 24px #b9e0ff44;
+  box-shadow: 0 2px 24px #232c7a88;
   padding: 26px 20px 18px 20px;
   position: relative;
   z-index: 2;
   animation: popinbox 0.7s;
+  color: #e3e7ff;
 }
 .ai-title {
   text-align: center;
   font-size: 1.28em;
   font-weight: bold;
-  color: #5c7cfa;
+  color: #87b5ff;
   margin-bottom: 10px;
+  letter-spacing: 1.7px;
+  text-shadow: 0 2px 8px #0071ff66;
 }
 .chat-window {
   height: 300px;
-  background: #f6f8fc;
+  background: #171b2e;
   border-radius: 10px;
   overflow-y: auto;
   padding: 12px 10px;
   margin-bottom: 10px;
-  box-shadow: 0 1px 8px #eee;
+  box-shadow: 0 1px 8px #262e5055;
   font-size: 1.08em;
+  color: #c0e8ff;
 }
 .msg {
   display: flex;
@@ -85,15 +92,15 @@ h2 { color: #5c7cfa; margin-top: 0; }
   animation: fadeinmsg 0.5s forwards;
 }
 @keyframes fadeinmsg {0%{opacity:0;}100%{opacity:1;}}
-.msg.user .bubble { background: #e0eaff; color: #222; align-self: flex-end; }
-.msg.ai .bubble { background: #b8f2e6; color: #222; align-self: flex-start; }
+.msg.user .bubble { background: #3e4872; color: #e3e7ff; align-self: flex-end; }
+.msg.ai .bubble { background: #1e2a40; color: #b0f3ff; align-self: flex-start; border-left: 3px solid #3b8fff; }
 .bubble {
   padding: 8px 14px;
-  border-radius: 16px;
+  border-radius: 17px;
   margin: 0 0 0 7px;
   min-width: 30px;
   max-width: 80%;
-  box-shadow: 0 1px 6px #e0eaff66;
+  box-shadow: 0 1px 6px #142c5f88;
   font-size: 1em;
   word-break: break-word;
   transition: background .3s;
@@ -104,17 +111,20 @@ h2 { color: #5c7cfa; margin-top: 0; }
 }
 #userInput {
   flex: 1; border-radius: 13px; padding: 8px 11px; font-size: 1.07em;
-  border: 1.5px solid #b8f2e6;
-  background: #f8fafc;
+  border: 1.5px solid #2e3a8d;
+  background: #191c33;
+  color: #e3e7ff;
 }
 .send-btn {
-  background: #b8f2e6;
+  background: #2e90ff;
+  color: white;
   border: none; border-radius: 13px;
   font-size: 1.36em;
   padding: 6px 14px;
   cursor: pointer;
   transition: background .15s;
+  box-shadow: 0 1px 6px #183e8a66;
 }
-.send-btn:hover { background: #a6d3ff; }
-::-webkit-scrollbar { width: 10px; background: #f6f8fc;}
-::-webkit-scrollbar-thumb { background: #b8f2e6; border-radius: 7px; }
+.send-btn:hover { background: #7eb8ff; color:#0c0c22;}
+::-webkit-scrollbar { width: 10px; background: #191c33;}
+::-webkit-scrollbar-thumb { background: #2e3a8d; border-radius: 7px; }
