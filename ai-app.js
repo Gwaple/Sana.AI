@@ -1,3 +1,16 @@
+// --- HOMEPAGE LOGIC ---
+function goHome() {
+  document.getElementById('homePage').style.display = "";
+  document.getElementById('authArea').style.display = "none";
+  document.getElementById('aiApp').style.display = "none";
+}
+function goToLogin() {
+  document.getElementById('homePage').style.display = "none";
+  document.getElementById('authArea').style.display = "";
+  document.getElementById('aiApp').style.display = "none";
+  showLogin();
+}
+
 // --- Auth Logic (local demo) ---
 function saveUser(username, password) {
   localStorage.setItem('aiapp-user-'+username, JSON.stringify({ password }));
@@ -19,6 +32,7 @@ function login() {
   currentUser = u;
   document.getElementById('authArea').style.display = "none";
   document.getElementById('aiApp').style.display = "";
+  document.getElementById('homePage').style.display = "none";
   document.getElementById('welcome').textContent = "🚀 Welcome, " + u + "!";
   document.getElementById('userInput').focus();
   showChat();
@@ -43,8 +57,9 @@ function showRegister() {
 }
 function logout() {
   currentUser = '';
-  document.getElementById('authArea').style.display = "";
+  document.getElementById('authArea').style.display = "none";
   document.getElementById('aiApp').style.display = "none";
+  document.getElementById('homePage').style.display = "";
 }
 function setMsg(id, msg, ok) {
   let el = document.getElementById(id);
@@ -71,7 +86,6 @@ function speak(text) {
   window.speechSynthesis.speak(utter);
 }
 
-// For real AI, connect to an API (OpenAI etc). Here, demo with space/science facts and conversational logic.
 function getChat() {
   try {
     return JSON.parse(localStorage.getItem('aiapp-chat-'+currentUser)) || [];
@@ -259,6 +273,6 @@ window.addEventListener('resize', ()=>{resizeSpaceBg(); makeSpace();});
 resizeSpaceBg(); makeSpace(); drawSpace();
 
 // --- INIT ---
-showLogin();
+goHome(); // show homepage first
 // Pre-load voices for SpeechSynthesis
 if ('speechSynthesis' in window) window.speechSynthesis.onvoiceschanged = ()=>{};
