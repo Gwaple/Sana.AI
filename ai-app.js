@@ -274,5 +274,8 @@ resizeSpaceBg(); makeSpace(); drawSpace();
 
 // --- INIT ---
 goHome(); // show homepage first
-// Pre-load voices for SpeechSynthesis
 if ('speechSynthesis' in window) window.speechSynthesis.onvoiceschanged = ()=>{};
+
+// Make navigation functions global for inline onclick in HTML
+window.goToLogin = goToLogin;
+window.goHome = goHome;
