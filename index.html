@@ -2,12 +2,12 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>AI App Demo</title>
+  <title>Space AI App</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <canvas id="bgAnim"></canvas>
+  <canvas id="spaceBg"></canvas>
   <div id="authArea" class="centered">
     <div id="loginBox" class="box glow">
       <h2>Sign In</h2>
@@ -32,14 +32,14 @@
       <button onclick="logout()" class="logout-btn">Logout</button>
     </div>
     <div class="aichat-box">
-      <div class="ai-title">🤖 AI Chat</div>
+      <div class="ai-title">🪐 SpaceBot</div>
       <div id="chatWindow" class="chat-window"></div>
       <div class="chat-input-row">
-        <input id="userInput" placeholder="Ask me anything..." onkeydown="if(event.key==='Enter'){sendMessage();}">
+        <input id="userInput" placeholder="Ask me anything about the universe..." onkeydown="if(event.key==='Enter'){sendMessage();}">
         <button onclick="sendMessage()" class="send-btn">➤</button>
       </div>
     </div>
   </div>
-  <script src="ai-app.js"></script>
+  <script src="space-ai-app.js"></script>
 </body>
 </html>
