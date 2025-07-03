@@ -77,7 +77,6 @@ function speak(text) {
   utter.pitch = 1.08;
   utter.volume = 0.92;
   utter.lang = 'en-US';
-  // Optionally: pick a "spacey" voice for fun
   let voices = window.speechSynthesis.getVoices();
   if (voices.length) {
     let sciFiVoices = voices.filter(v => /Google UK English Female|Zira|Samantha|en-US/i.test(v.name));
@@ -155,7 +154,6 @@ function aiRespond(userMsg) {
   } else if(/help|what can you do/.test(lower)) {
     reply = "I can answer questions about space, science, and the universe. Try asking me about planets, stars, black holes, or anything cosmic!";
   } else {
-    // If nothing matches, give a generic but helpful answer
     const generic = [
       "That's fascinating! Can you tell me more, or ask about a space topic?",
       "Space is full of mysteries. Try asking about planets, stars, or black holes!",
@@ -176,7 +174,6 @@ const bg = document.getElementById('spaceBg'), ctx = bg.getContext('2d');
 let stars = [], planets = [], comets = [];
 function resizeSpaceBg() { bg.width = window.innerWidth; bg.height = window.innerHeight; }
 function makeSpace() {
-  // Stars
   stars = [];
   for (let i=0;i<150;++i) {
     stars.push({
@@ -187,13 +184,11 @@ function makeSpace() {
       s: Math.random()*0.7 + 0.5
     });
   }
-  // Planets
   planets = [
     {x:110, y:window.innerHeight-170, r:60, color:"#2c5fff", ring:true, alpha:0.38},
     {x:window.innerWidth-90, y:window.innerHeight-60, r:36, color:"#e8c57e", ring:false, alpha:0.23},
     {x:window.innerWidth*0.50, y:80, r:49, color:"#ba55d3", ring:true, alpha:0.19}
   ];
-  // Comets
   comets = [];
   for (let i=0;i<2;++i) comets.push({
     x: Math.random()*window.innerWidth,
@@ -206,7 +201,6 @@ function makeSpace() {
 }
 function drawSpace() {
   ctx.clearRect(0,0,bg.width,bg.height);
-  // Stars
   let t = Date.now()/1200;
   for (let s of stars) {
     let alpha = 0.58 + 0.35*Math.abs(Math.cos(t*0.7+s.tw));
@@ -221,7 +215,6 @@ function drawSpace() {
     ctx.shadowBlur = 0;
     ctx.restore();
   }
-  // Planets
   for (let p of planets) {
     ctx.save();
     ctx.globalAlpha = p.alpha;
@@ -242,7 +235,6 @@ function drawSpace() {
     }
     ctx.restore();
   }
-  // Comets
   for (let c of comets) {
     ctx.save();
     let grad = ctx.createLinearGradient(c.x-c.tail, c.y-c.tail*0.3, c.x, c.y);
@@ -276,6 +268,12 @@ resizeSpaceBg(); makeSpace(); drawSpace();
 goHome(); // show homepage first
 if ('speechSynthesis' in window) window.speechSynthesis.onvoiceschanged = ()=>{};
 
-// Make navigation functions global for inline onclick in HTML
+// Make all functions used in HTML 'onclick' global
 window.goToLogin = goToLogin;
 window.goHome = goHome;
+window.login = login;
+window.register = register;
+window.showLogin = showLogin;
+window.showRegister = showRegister;
+window.logout = logout;
+window.sendMessage = sendMessage;
